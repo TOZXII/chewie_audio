@@ -16,8 +16,8 @@ String formatDuration(Duration position) {
   final minutesString = minutes >= 10
       ? '$minutes'
       : minutes == 0
-          ? '00'
-          : '0$minutes';
+          ? '0'
+          : '$minutes';
 
   final secondsString = seconds >= 10
       ? '$seconds'

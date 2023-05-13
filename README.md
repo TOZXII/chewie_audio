@@ -10,11 +10,12 @@ The [`video_player`](https://pub.dartlang.org/packages/video_player) plugin prov
 
 ## Preview
 
-| MaterialControls | MaterialDesktopControls |
-| :--------------: | :---------------------: |
-|     ![](https://github.com/brianegan/chewie/raw/master/assets/MaterialControls.png)     |    ![](https://github.com/brianegan/chewie/raw/master/assets/MaterialDesktopControls.png)     |
+### MaterialControls
+
+![](https://github.com/Sub6Resources/chewie_audio/raw/master/assets/MaterialControls.png)
 
 ### CupertinoControls
+
 ![](https://github.com/brianegan/chewie/raw/master/assets/CupertinoControls.png)
 
 ## Installation
@@ -58,8 +59,6 @@ void dispose() {
 ```
 
 ## Options
-
-![](https://github.com/brianegan/chewie/raw/master/assets/Options.png)
 
 Chewie got some options which controls the video you provide. These options appear on default on a `showModalBottomSheet` (like you already know from YT maybe). Chewie is passing on default `Playback speed` and `Subtitles` options as an `OptionItem`.
 

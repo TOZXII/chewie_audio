@@ -1,5 +1,9 @@
 # Chewie Audio Changelog
 
+## 1.5.0
+
+* Merge in changes up to chewie 1.5.0
+
 ## 1.4.0
 
 * Flutter 3.10 compatibility

@@ -11,8 +11,6 @@ class AdaptiveControls extends StatelessWidget {
     switch (Theme.of(context).platform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
-        return const MaterialControls();
-
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
       case TargetPlatform.linux:
@@ -24,7 +22,7 @@ class AdaptiveControls extends StatelessWidget {
           iconColor: Color.fromARGB(255, 200, 200, 200),
         );
       default:
-        return const MaterialControls();
+        return const MaterialDesktopControls();
     }
   }
 }

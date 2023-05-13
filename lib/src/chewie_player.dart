@@ -4,11 +4,9 @@ import 'package:chewie_audio/src/chewie_progress_colors.dart';
 import 'package:chewie_audio/src/models/option_item.dart';
 import 'package:chewie_audio/src/models/options_translation.dart';
 import 'package:chewie_audio/src/models/subtitle_model.dart';
-import 'package:chewie_audio/src/notifiers/player_notifier.dart';
 import 'package:chewie_audio/src/player_with_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
 
 typedef ChewieRoutePageBuilder = Widget Function(
@@ -39,12 +37,10 @@ class ChewieAudio extends StatefulWidget {
 
 class ChewieAudioState extends State<ChewieAudio> {
 
-  late PlayerNotifier notifier;
 
   @override
   void initState() {
     super.initState();
-    notifier = PlayerNotifier.init();
   }
 
 
@@ -52,10 +48,7 @@ class ChewieAudioState extends State<ChewieAudio> {
   Widget build(BuildContext context) {
     return ChewieAudioControllerProvider(
       controller: widget.controller,
-      child: ChangeNotifierProvider<PlayerNotifier>.value(
-        value: notifier,
-        builder: (context, w) => const PlayerWithControls(),
-      ),
+      child: PlayerWithControls(),
     );
   }
 
