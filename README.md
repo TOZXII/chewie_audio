@@ -16,7 +16,7 @@ The [`video_player`](https://pub.dartlang.org/packages/video_player) plugin prov
 
 ### CupertinoControls
 
-![](https://github.com/brianegan/chewie/raw/master/assets/CupertinoControls.png)
+![](https://github.com/Sub6Resources/chewie_audio/raw/master/assets/CupertinoControls.png)
 
 ## Installation
 
