@@ -63,7 +63,6 @@ class _ChewieAudioDemoState extends State<ChewieAudioDemo> {
   }
 
   void _createChewieController() {
-
     _chewieController = ChewieAudioController(
       videoPlayerController: _videoPlayerController1,
       autoPlay: true,

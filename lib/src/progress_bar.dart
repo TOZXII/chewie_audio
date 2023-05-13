@@ -66,7 +66,8 @@ class _VideoProgressBarState extends State<VideoProgressBar> {
 
   @override
   Widget build(BuildContext context) {
-    final ChewieAudioController chewieController = ChewieAudioController.of(context);
+    final ChewieAudioController chewieController =
+        ChewieAudioController.of(context);
     final child = Center(
       child: StaticProgressBar(
         value: controller.value,

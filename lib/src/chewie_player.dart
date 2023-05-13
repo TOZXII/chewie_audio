@@ -36,23 +36,18 @@ class ChewieAudio extends StatefulWidget {
 }
 
 class ChewieAudioState extends State<ChewieAudio> {
-
-
   @override
   void initState() {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return ChewieAudioControllerProvider(
       controller: widget.controller,
-      child: PlayerWithControls(),
+      child: const PlayerWithControls(),
     );
   }
-
-
 }
 
 /// The ChewieAudioController is used to configure and drive the Chewie Audio Player
@@ -281,15 +276,11 @@ class ChewieAudioController extends ChangeNotifier {
   final EdgeInsets controlsSafeAreaMinimum;
 
   static ChewieAudioController of(BuildContext context) {
-    final chewieControllerProvider =
-        context.dependOnInheritedWidgetOfExactType<ChewieAudioControllerProvider>()!;
+    final chewieControllerProvider = context
+        .dependOnInheritedWidgetOfExactType<ChewieAudioControllerProvider>()!;
 
     return chewieControllerProvider.controller;
   }
-
-  bool _isFullScreen = false;
-
-  bool get isFullScreen => _isFullScreen;
 
   bool get isPlaying => videoPlayerController.value.isPlaying;
 
@@ -350,6 +341,6 @@ class ChewieAudioControllerProvider extends InheritedWidget {
   final ChewieAudioController controller;
 
   @override
-  bool updateShouldNotify(ChewieAudioControllerProvider old) =>
-      controller != old.controller;
+  bool updateShouldNotify(ChewieAudioControllerProvider oldWidget) =>
+      controller != oldWidget.controller;
 }

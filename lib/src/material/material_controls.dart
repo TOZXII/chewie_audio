@@ -112,7 +112,10 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
   Widget _buildSubtitleToggle({IconData? icon, bool isPadded = false}) {
     return IconButton(
       padding: isPadded ? const EdgeInsets.all(8.0) : EdgeInsets.zero,
-      icon: Icon(icon, color: _subtitleOn ? Theme.of(context).colorScheme.onBackground: Theme.of(context).colorScheme.onBackground.withOpacity(0.3)),
+      icon: Icon(icon,
+          color: _subtitleOn
+              ? Theme.of(context).colorScheme.onBackground
+              : Theme.of(context).colorScheme.onBackground.withOpacity(0.3)),
       onPressed: _onSubtitleTap,
     );
   }
@@ -141,7 +144,6 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
     return IconButton(
       padding: isPadded ? const EdgeInsets.all(8.0) : EdgeInsets.zero,
       onPressed: () async {
-
         if (chewieController.optionsBuilder != null) {
           await chewieController.optionsBuilder!(context, options);
         } else {
@@ -155,7 +157,6 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
             ),
           );
         }
-
       },
       icon: Icon(
         icon ?? Icons.more_vert,
@@ -221,8 +222,7 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
                     const Expanded(child: Text('LIVE'))
                   else
                     _buildPosition(iconColor),
-                  if (!chewieController.isLive)
-                    _buildProgressBar(),
+                  if (!chewieController.isLive) _buildProgressBar(),
                   _buildMuteButton(controller),
                   if (chewieController.showControls &&
                       chewieController.subtitle != null &&
@@ -239,9 +239,7 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
     );
   }
 
-
   Future<void> _onSpeedButtonTap() async {
-
     final chosenSpeed = await showModalBottomSheet<double>(
       context: context,
       isScrollControlled: true,
@@ -294,13 +292,14 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
           left: 12.0,
           right: 12.0,
         ),
-        child: _displayBufferingIndicator?
-        const Center(
-        child: CircularProgressIndicator(),
-        ): AnimatedPlayPause(
-          playing: controller.value.isPlaying,
-          color: Theme.of(context).colorScheme.onBackground,
-        ),
+        child: _displayBufferingIndicator
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : AnimatedPlayPause(
+                playing: controller.value.isPlaying,
+                color: Theme.of(context).colorScheme.onBackground,
+              ),
       ),
     );
   }
@@ -329,7 +328,6 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
     controller.addListener(_updateState);
 
     _updateState();
-
   }
 
   void _playPause() {
@@ -339,7 +337,6 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
       if (controller.value.isPlaying) {
         controller.pause();
       } else {
-
         if (!controller.value.isInitialized) {
           controller.initialize().then((_) {
             controller.play();
@@ -398,7 +395,8 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
                 handleColor: Theme.of(context).colorScheme.secondary,
                 bufferedColor:
                     Theme.of(context).colorScheme.background.withOpacity(0.5),
-                backgroundColor: Theme.of(context).disabledColor.withOpacity(.5),
+                backgroundColor:
+                    Theme.of(context).disabledColor.withOpacity(.5),
               ),
         ),
       ),

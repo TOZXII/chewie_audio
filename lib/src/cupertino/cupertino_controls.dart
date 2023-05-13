@@ -87,8 +87,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            if (_subtitleOn)
-              _buildSubtitles(chewieController.subtitle!),
+            if (_subtitleOn) _buildSubtitles(chewieController.subtitle!),
             _buildBottomBar(backgroundColor, iconColor, barHeight),
           ],
         ),
@@ -135,7 +134,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
 
     return GestureDetector(
       onTap: () async {
-
         if (chewieController.optionsBuilder != null) {
           await chewieController.optionsBuilder!(context, options);
         } else {
@@ -208,7 +206,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
     double barHeight,
   ) {
     return SafeArea(
-      bottom: chewieController.isFullScreen,
       minimum: chewieController.controlsSafeAreaMinimum,
       child: Container(
         color: Colors.transparent,
@@ -442,7 +439,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
   ) {
     return GestureDetector(
       onTap: () async {
-
         final chosenSpeed = await showCupertinoModalPopup<double>(
           context: context,
           semanticsDismissible: true,
@@ -455,7 +451,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
         if (chosenSpeed != null) {
           controller.setPlaybackSpeed(chosenSpeed);
         }
-
       },
       child: Container(
         height: barHeight,
@@ -487,7 +482,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
     controller.addListener(_updateState);
 
     _updateState();
-
   }
 
   Widget _buildProgressBar() {
@@ -535,7 +529,6 @@ class _CupertinoControlsState extends State<CupertinoControls>
       if (controller.value.isPlaying) {
         controller.pause();
       } else {
-
         if (!controller.value.isInitialized) {
           controller.initialize().then((_) {
             controller.play();
