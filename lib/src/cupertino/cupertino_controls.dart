@@ -206,6 +206,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
     double barHeight,
   ) {
     return SafeArea(
+      bottom: chewieController.controlsSafeAreaBottom,
       minimum: chewieController.controlsSafeAreaMinimum,
       child: Container(
         color: Colors.transparent,

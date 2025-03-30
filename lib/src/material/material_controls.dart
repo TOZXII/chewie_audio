@@ -209,6 +209,7 @@ class _MaterialDesktopControlsState extends State<MaterialDesktopControls>
       height: barHeight,
       padding: const EdgeInsets.only(bottom: 15),
       child: SafeArea(
+        bottom: chewieController.controlsSafeAreaBottom,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,

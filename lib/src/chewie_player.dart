@@ -86,6 +86,7 @@ class ChewieAudioController extends ChangeNotifier {
     this.playbackSpeeds = const [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
     this.progressIndicatorDelay,
     this.controlsSafeAreaMinimum = EdgeInsets.zero,
+    this.controlsSafeAreaBottom = false,
   }) : assert(
           playbackSpeeds.every((speed) => speed > 0),
           'The playbackSpeeds values must all be greater than 0',
@@ -274,6 +275,9 @@ class ChewieAudioController extends ChangeNotifier {
   /// Adds additional padding to the controls' [SafeArea] as desired.
   /// Defaults to [EdgeInsets.zero].
   final EdgeInsets controlsSafeAreaMinimum;
+
+  /// Defines if the controls should have a bottom padding set by safeArea.
+  final bool controlsSafeAreaBottom;
 
   static ChewieAudioController of(BuildContext context) {
     final chewieControllerProvider = context
