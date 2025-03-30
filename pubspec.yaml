@@ -1,4 +1,4 @@
-name: chewie_audio
+name: chewie_audio_fork
 description: An audio player for Flutter with Cupertino and Material play controls
 version: 1.5.1
 homepage: https://github.com/Sub6Resources/chewie_audio

@@ -1,4 +1,6 @@
-import 'package:chewie_audio/chewie_audio.dart';
+import 'package:chewie_audio_fork/chewie_audio_fork.dart';
+import 'package:chewie_audio_fork/src/material/material_controls.dart';
+import 'package:chewie_audio_fork/src/cupertino/cupertino_controls.dart';
 import 'package:flutter/material.dart';
 
 class AdaptiveControls extends StatelessWidget {

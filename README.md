@@ -1,10 +1,10 @@
 # chewie_audio
+
 [![Version](https://img.shields.io/pub/v/chewie_audio.svg)](https://pub.dev/packages/chewie_audio)
 ![CI](https://github.com/Sub6Resources/chewie_audio/workflows/CI/badge.svg)
 [![Generic badge](https://img.shields.io/badge/platform-android%20|%20ios%20|%20web%20-blue.svg)](https://pub.dev/packages/chewie_audio)
 
-
-The audio player for Flutter with a heart of gold. 
+The audio player for Flutter with a heart of gold.
 
 The [`video_player`](https://pub.dartlang.org/packages/video_player) plugin provides low-level access to video/audio playback. Chewie Audio uses the `video_player` under the hood and wraps it in a friendly Material or Cupertino UI!
 
@@ -20,18 +20,18 @@ The [`video_player`](https://pub.dartlang.org/packages/video_player) plugin prov
 
 ## Installation
 
-In your `pubspec.yaml` file within your Flutter Project: 
+In your `pubspec.yaml` file within your Flutter Project:
 
 ```yaml
 dependencies:
-  chewie_audio: <latest_version>
+  chewie_audio_fork: <latest_version>
   video_player: <latest_version>
 ```
 
 ## Use it
 
 ```dart
-import 'package:chewie_audio/chewie_audio.dart';
+import 'package:chewie_audio_fork/chewie_audio.dart';
 final videoPlayerController = VideoPlayerController.network(
     'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
 
@@ -49,6 +49,7 @@ final playerWidget = ChewieAudio(
 ```
 
 Please make sure to dispose both controller widgets after use. For example by overriding the dispose method of the a `StatefulWidget`:
+
 ```dart
 @override
 void dispose() {
@@ -153,7 +154,7 @@ ChewieController(
 );
 ```
 
-The `index` attribute is just for purpases if you want to structure your subtitles in your database and provide your indexes here. `start`, `end` and `text` are here the key attributes. 
+The `index` attribute is just for purpases if you want to structure your subtitles in your database and provide your indexes here. `start`, `end` and `text` are here the key attributes.
 
 The Duration defines on which part of your video your subtitles should start and end. For example: Your video is 10 minutes long and you want to add a subtitle between: `00:00` and `00:10`'th second you've to provide:
 
@@ -187,7 +188,7 @@ Please run the app in the [`example/`](https://github.com/Sub6Resources/chewie_a
 - [x] Custom Progress-Bar colors
 - [x] Custom Overlay
 - [x] Allow Sleep (Wakelock)
-- [x] Playbackspeed Control 
+- [x] Playbackspeed Control
 - [x] Custom Route-Pagebuilder
 - [x] Custom Device-Orientation and SystemOverlay before and after fullscreen
 - [x] Custom ErrorBuilder
@@ -195,12 +196,10 @@ Please run the app in the [`example/`](https://github.com/Sub6Resources/chewie_a
 - [ ] Re-design State-Manager with Provider
 - [ ] Screen-Mirroring / Casting (Google Chromecast)
 
-
 ## iOS warning
+
 The video_player plugin used by chewie_audio will only work in iOS simulators if you are on Flutter 1.26.0+.
 Please refer to this [issue](https://github.com/flutter/flutter/issues/14647).
-
-
 
 ```
 000000000000000KKKKKKKKKKKKXXXXXXXXXXXXXKKKKKKKKKKKKKKKKKKKKKKKKKKK00

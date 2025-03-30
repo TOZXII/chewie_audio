@@ -1,5 +1,5 @@
-import 'package:chewie_audio/src/chewie_player.dart';
-import 'package:chewie_audio/src/helpers/adaptive_controls.dart';
+import 'package:chewie_audio_fork/src/chewie_player.dart';
+import 'package:chewie_audio_fork/src/helpers/adaptive_controls.dart';
 import 'package:flutter/material.dart';
 
 class PlayerWithControls extends StatelessWidget {

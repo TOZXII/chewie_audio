@@ -1,4 +1,4 @@
-library chewie_audio;
+library chewie_audio_fork;
 
 export 'src/chewie_player.dart';
 export 'src/chewie_progress_colors.dart';

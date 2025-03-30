@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:chewie_audio/chewie_audio.dart';
+import 'package:chewie_audio_fork/chewie_audio_fork.dart';
 import 'package:chewie_example/app/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
